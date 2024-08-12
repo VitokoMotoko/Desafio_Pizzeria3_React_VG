@@ -1,0 +1,19 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .app-content {
+    flex: 1;
+  }
+  
+  .footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
