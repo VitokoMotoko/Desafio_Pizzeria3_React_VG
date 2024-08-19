@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { pizzaCart } from './assets/JavaScripts/pizzas';
-import './assets/CSS/Cart.css';
+import React, { useEffect } from 'react';
+import '../assets/CSS/Cart.css';
 
-function Cart({ updateTotal }) {
-  const [cart, setCart] = useState(pizzaCart);
-
+function Cart({ cart, setCart, updateTotal }) {
   useEffect(() => {
     const total = cart.reduce((acc, pizza) => acc + pizza.price * pizza.quantity, 0);
     updateTotal(total);
@@ -18,8 +15,10 @@ function Cart({ updateTotal }) {
 
   const decreaseQuantity = (index) => {
     const newCart = [...cart];
-    if (newCart[index].quantity > 0) {
+    if (newCart[index].quantity > 1) {
       newCart[index].quantity -= 1;
+    } else {
+      newCart.splice(index, 1); // Elimina la pizza del carrito si la cantidad es 0
     }
     setCart(newCart);
   };

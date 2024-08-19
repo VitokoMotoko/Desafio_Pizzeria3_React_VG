@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../src/assets/CSS/Navbar.css';
+import '../assets/CSS/Navbar.css';
 
 const Navbar = ({ total }) => {
   const token = false;
